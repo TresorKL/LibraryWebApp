@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Book form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            ul{
+              list-style-type: none;
+            }
+        </style>
+        
+        <script>
+            function addAuthor(ulId){
+              //var ul = document.getElementById("list");
+             
+              
+              
+             var list = document.getElementById(ulId);
+             
+             var li = document.createElement("li");
+             var input = document.createElement("input");
+             input.type= "text";
+             input.name="author[]";
+             input.placeholder="co-Auther";
+             li.appendChild(input);
+             list.appendChild(li);
+                
+            }
+        </script>
+    </head>
+    
+    <body>
+        <h1>PLEASE ADD NEW BOOK</h1>
+        <form action="AddBookServlet.do" method="post" >
+            
+         <ul id="ulid">
+            <li>
+                <input type="number" name="id" placeholder="ID"/>  
+            </li>
+            <li>
+                <input type="text" name="title" placeholder="TITLE"/>  
+            </li>
+            <li>
+                <input type="text" name="author[]" placeholder="Auther"/>  
+            </li>
+            
+            
+            
+        </ul>
+            <ul>
+              <li>
+                <input type="button" value="ADD AUTHOR" onclick="addAuthor('ulid')" /> 
+                <input type="submit" value="ADD BOOD" />  
+            </li>  
+             </ul>
+            </form>
+    </body>
+</html>
